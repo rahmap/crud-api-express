@@ -1,0 +1,37 @@
+<%- include('_partials/header.ejs') %>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <h1 class="display-4"><%= title %></h1>
+            <p class="lead"><%= subTitle %>.</p>
+        </div>
+    </div>
+    <form  action="<%= baseURL %>/users/store" method="post">
+        <div class="form-group">
+            <label for="inputName">User Name</label>
+            <input required name="name" type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+            <small class="form-text text-muted">Give beautiful name, so i can loving you.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">User Address</label>
+            <input required type="text" class="form-control" name="address" id="inputAddress">
+        </div>
+        <div class="form-group">
+            <label for="inputAge">User Age</label>
+            <input required type="number" class="form-control" name="age" id="inputAge" maxlength="90">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+<script>
+    <% if(locals.messages && messages.title !== null){ %>
+    getAlert(
+        '<%= messages.title %>',
+        '<%= messages.text %>',
+        '<%= messages.icon %>',
+        '<%= messages.timer %>',
+        '<%= messages.showConfirmButton %>'
+    )
+    <% } %>
+</script>
+
+<%- include('_partials/footer.ejs') %>

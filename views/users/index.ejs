@@ -1,0 +1,81 @@
+<%- include('_partials/header.ejs') %>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <h1 class="display-4"><%= title %></h1>
+            <p class="lead"><%= subTitle %>.</p>
+        </div>
+    </div>
+    <% if(!locals.user){ %>
+        <ul class="list-group mb-3">
+            <% for(var i in users){ %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div><b><%= users[i].user_id %> </b><%= users[i].user_name %> <span class="badge badge-info badge-pill ml-2"><%= users[i].user_age %></span></div>
+                    <div>
+                        <a href="users/<%= users[i].user_id %>" type="button" class="btn btn-sm btn-primary detail-btn">
+                            Detail
+                        </a>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        <nav class="mb-5" aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    <% } else { %>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title"><%= user.user_name %> <span class="badge badge-info badge-pill ml-2"><%= user.user_age %></span></h5>
+                <p class="text-monospace"><%= user.user_address %></p>
+                <form action="<%= baseURL %>/users/<%= user.user_id %>?_method=DELETE" method="post">
+                    <button type="submit" data-id="<%= user.user_id %>"
+                            class="btn btn-danger float-right"
+                            onclick="swalConfirmDelete()"
+                            id="btn-delete">Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <form  action="<%= baseURL %>/users/<%= user.user_id %>?_method=PUT" method="post">
+            <div class="form-group">
+                <label for="inputName">User Name</label>
+                <input required name="name" type="text" class="form-control" id="inputName" value="<%= user.user_name %>">
+                <small class="form-text text-muted">You have ugly name, change it.</small>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">User Address</label>
+                <input required type="text" class="form-control" name="address" id="inputAddress" value="<%= user.user_address %>">
+            </div>
+            <div class="form-group">
+                <label for="inputAge">User Age</label>
+                <input required type="number" class="form-control" name="age" id="inputAge" maxlength="90" value="<%= user.user_age %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    <% }  %>
+</div>
+<script>
+    <% if(locals.messages){ %>
+        getAlert(
+            '<%= messages.title %>',
+            '<%= messages.text %>',
+            '<%= messages.icon %>',
+            '<%= messages.timer %>',
+            '<%= messages.showConfirmButton %>'
+        )
+    <% } %>
+</script>
+
+<%- include('_partials/footer.ejs') %>
