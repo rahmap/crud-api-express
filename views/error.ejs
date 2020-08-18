@@ -1,3 +1,8 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%- include('users/_partials/header.ejs') %>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+        <h1 class="display-4"><%= title %></h1>
+        <p class="lead"><%= subTitle %></p>
+    </div>
+</div>
+<%- include('users/_partials/footer.ejs') %>
