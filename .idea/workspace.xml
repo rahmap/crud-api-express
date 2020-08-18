@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a25d221-01a6-4c56-a2f8-dab0b007d229" name="Default Changelist" comment="add api create, read" />
-    <list id="f7441267-d405-4353-bcf8-48c54b97833f" name="Revert &quot;add api cread, read&quot;" comment="Revert &quot;add api cread, read&quot;&#10;&#10;This reverts commit eecd85f9">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userApiController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userApiController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/userApiModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/userApiModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users_api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/error.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.ejs" afterDir="false" />
-    </list>
+    <list id="f7441267-d405-4353-bcf8-48c54b97833f" name="Revert &quot;add api cread, read&quot;" comment="Revert &quot;add api cread, read&quot;&#10;&#10;This reverts commit eecd85f9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +84,7 @@
       <workItem from="1597669042901" duration="29679000" />
       <workItem from="1597706714021" duration="6307000" />
       <workItem from="1597764885055" duration="1796000" />
-      <workItem from="1597778996600" duration="13825000" />
+      <workItem from="1597778996600" duration="13987000" />
     </task>
     <task id="LOCAL-00001" summary="add api cread, read">
       <created>1597793755043</created>
@@ -118,6 +112,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
