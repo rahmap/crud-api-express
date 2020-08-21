@@ -1,5 +1,5 @@
 let userApiModel = require('../models/userApiModel');
-
+let CircularJSON = require('circular-json');
 module.exports = {
   index : async function(req, res) {
     let users = await userApiModel.getAllUsers()
@@ -13,7 +13,7 @@ module.exports = {
         results = {
           statusCode: 200,
           statusText: 'success',
-          description: 'get all users',
+          message: 'get all users',
           results: users
         }
       } else {
@@ -21,7 +21,7 @@ module.exports = {
         results = {
           statusCode : 404,
           statusText : 'error',
-          description : 'get all users',
+          message : 'can not get all users',
           results : null
         }
       }
@@ -43,7 +43,7 @@ module.exports = {
         results = {
           statusCode : 200,
           statusText : 'success',
-          description : 'get single user',
+          message : 'get single user',
           results : singleUser
         }
       } else {
@@ -51,7 +51,7 @@ module.exports = {
         results = {
           statusCode : 404,
           statusText : 'error',
-          description : 'get single user',
+          message : 'user not found',
           results : null
         }
       }
@@ -70,7 +70,7 @@ module.exports = {
       res.status(403).json({
         statusCode : 403,
         statusText : 'error',
-        description : 'create user',
+        message : 'create user',
         results : {
           id : 0,
           description : 'Content-Type should application/x-www-form-urlencoded',
@@ -83,7 +83,7 @@ module.exports = {
         res.status(200).json({
           statusCode : 200,
           statusText : 'success',
-          description : 'create user',
+          message : 'create user',
           results : {
             id : insert,
             description : 'create user success',
@@ -94,7 +94,7 @@ module.exports = {
         res.status(500).json({
           statusCode : 500,
           statusText : 'error',
-          description : 'create user',
+          message : 'create user',
           results : {
             id : insert,
             description : 'create user failed',
@@ -102,6 +102,54 @@ module.exports = {
           }
         })
       }
+    }
+    res.end()
+  },
+
+  destroy : async function (req, res){
+    let deleteUser = await userApiModel.deleteUser(req.params.id)
+    if(deleteUser) {
+      res.status(200).json({
+        statusCode : 200,
+        statusText : 'success',
+        message : 'delete user success',
+        results : deleteUser
+      })
+    } else {
+      res.status(500).json({
+        statusCode : 500,
+        statusText : 'error',
+        message : 'delete user failed',
+        results : deleteUser
+      })
+    }
+    res.end()
+  },
+
+  edit : function (req, res) {
+    res.write('delete')
+    res.end()
+  },
+
+  update : async function (req, res) {
+    let editUser = await userApiModel.updateUser(req.params.id, req.body)
+    if(editUser.affectedRows) {
+      res.status(200).json({
+        statusCode : 200,
+        statusText : 'success',
+        message : 'update user success',
+        results : editUser
+      })
+    } else {
+      res.status(500).json({
+        statusCode : 500,
+        statusText : 'error',
+        message : 'update user failed',
+        results : {
+          affectedRows : editUser.affectedRows,
+          postData : req.body
+        }
+      })
     }
     res.end()
   }

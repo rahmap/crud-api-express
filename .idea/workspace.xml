@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a25d221-01a6-4c56-a2f8-dab0b007d229" name="Default Changelist" comment="add api create, read" />
+    <list default="true" id="2a25d221-01a6-4c56-a2f8-dab0b007d229" name="Default Changelist" comment="add api create, read">
+      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userApiController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userApiController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/userApiModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/userApiModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users_api.js" afterDir="false" />
+    </list>
     <list id="f7441267-d405-4353-bcf8-48c54b97833f" name="Revert &quot;add api cread, read&quot;" comment="Revert &quot;add api cread, read&quot;&#10;&#10;This reverts commit eecd85f9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +46,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1g3xOAKkfaZv0UFBfEQDyIErfEH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -85,6 +96,7 @@
       <workItem from="1597706714021" duration="6307000" />
       <workItem from="1597764885055" duration="1796000" />
       <workItem from="1597778996600" duration="13987000" />
+      <workItem from="1597973325737" duration="7530000" />
     </task>
     <task id="LOCAL-00001" summary="add api cread, read">
       <created>1597793755043</created>
@@ -133,8 +145,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add api cread, read" />
     <MESSAGE value="add api create, read" />
     <option name="LAST_COMMIT_MESSAGE" value="add api create, read" />
